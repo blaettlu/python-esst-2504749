@@ -2,6 +2,6 @@
 
 
 var1 = 15
-var2 = 3
-print("Die Mfffultiplikkkkkkation von " + str(var1) + " mit " + str(var2) + " ist: ",var1*var2)
+var2 = 4
+print("Die Multiplikation von " + str(var1) + " mit " + str(var2) + " ist: ",var1*var2)
 print("Die Summe von " + str(var1) + " mit " + str(var2) + " ist: ",var1+var2)
