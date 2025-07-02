@@ -1,14 +1,17 @@
 # Das ist ein Kommentar in Ihrer Uebungsdatei
 
 
-gkzahl1 = 3.1
-gkzahl2 = 2.5
+zahl1 = 2.2
+zahl2 = 2.6
+zahl3 = 4.8
 
-def meine_multiplikation(zahl1, zahl2):
-  multipl = zahl1 * (zahl2+2)
-  return multipl
+def meine_vergleichsfunktion(p1, p2, p3):
+  bl1 = False
+  if (p1 < p2) and (p2 < p3): bl1 = True
+  return bl1
 
-print('Das Ergebnis ist: ',meine_multiplikation(gkzahl1,gkzahl2))
+#print('zahl1 < zahl2 < zahl3 ? ',meine_vergleichsfunktion(zahl1,zahl2,zahl3))
+print(str(zahl1) + ' < ' + str(zahl2) + ' < ' + str(zahl3) + ' ?: ',meine_vergleichsfunktion(zahl1,zahl2,zahl3))
 
 
 
