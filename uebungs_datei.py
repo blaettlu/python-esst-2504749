@@ -1,38 +1,63 @@
-# 1.Aufgabe
-
-my_list = [0,10,100]
-
-def ausgabe_meine_liste(paramliste):
-  for zahl in paramliste:
-    print('Das aktuelle Element ist: ',zahl)
-
-ausgabe_meine_liste(my_list)
-
-# 2.Aufgabe
-
-gkzahl1 = 3.1
-gkzahl2 = 4.0
-
-def meine_multiplikation(zahl1, zahl2):
-  # multipl = zahl1 * (zahl2+2)
-  return zahl1 * (zahl2+2)
-
-print('Das Ergebnis ist: ',meine_multiplikation(gkzahl1,gkzahl2))
 
 
-# 3.Aufgabe
+import random
 
-zahl1 = 2.2
-zahl2 = 2.6
-zahl3 = 4.8
+#while True:
+for i in range(5):
 
-def meine_vergleichsfunktion(p1, p2, p3):
-  if (p1 < p2) and (p2 < p3): return True
+  user_eingabe_short = input('Schere S, Stein T oder Papier P ?: ')
+
+  match user_eingabe_short:
+    case 's':
+      user_eingabe = 'Schere'
+    case 'S':
+      user_eingabe ='Schere'
+    case 't':
+      user_eingabe ='Stein'
+    case 'T':
+      user_eingabe ='Stein'
+    case 'p':
+      user_eingabe ='Papier'
+    case 'P':
+      user_eingabe ='Papier'
+    case _:
+      user_eingabe ='Ungültige Eingabe'
+
+  print('User    : ',user_eingabe)
+
+
+  computer_eingabe_num = random.randint(0,3)
+
+  match computer_eingabe_num:
+    case 0:
+      computer_eingabe = 'Schere'
+    case 1:
+      computer_eingabe = 'Stein'
+    case 2:
+      computer_eingabe = 'Papier'
+  print('Computer: ',computer_eingabe)
+
+  if user_eingabe == 'Schere' and computer_eingabe == 'Schere':
+    winner = 'Unentschieden'
+  elif user_eingabe == 'Schere' and computer_eingabe == 'Stein':
+    winner = 'Computer'
+  elif user_eingabe == 'Schere' and computer_eingabe == 'Papier':
+    winner = 'User'
+  elif user_eingabe == 'Stein' and computer_eingabe == 'Schere':
+    winner = 'User'
+  elif user_eingabe == 'Stein' and computer_eingabe == 'Stein':
+    winner = 'Unentschieden'
+  elif user_eingabe == 'Stein' and computer_eingabe == 'Papier':
+    winner = 'Computer'
+  elif user_eingabe == 'Papier' and computer_eingabe == 'Schere':
+    winner = 'Computer'
+  elif user_eingabe == 'Papier' and computer_eingabe == 'Stein':
+    winner = 'User'
+  elif user_eingabe == 'Papier' and computer_eingabe == 'Papier':
+    winner = 'Unentschieden'
   else:
-    return False
+    winner = 'ungültig'
 
-#print('zahl1 < zahl2 < zahl3 ? ',meine_vergleichsfunktion(zahl1,zahl2,zahl3))
-print(str(zahl1) + ' < ' + str(zahl2) + ' < ' + str(zahl3) + ' ?: ',meine_vergleichsfunktion(zahl1,zahl2,zahl3))
-
+  print('Winner  : ', winner)
 
 
