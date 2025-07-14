@@ -29,9 +29,11 @@ def stein_setzen_random(sp):
 
 def stein_setzen(sp):
 	user_eingabe = 0
-	while user_eingabe < 1 and user_eingabe > 9:
-		user_eingabe = input('Position (1..9) für ' + str(sp) + ' : ')
-    spielbrett[user_eingabe -1] = sp
+	while user_eingabe < 1 or user_eingabe > 9:
+		eingabe = input('Position (1..9) für ' + str(sp) + ' : ')
+		user_eingabe = int(eingabe)
+	spielbrett[user_eingabe - 1] = sp
+	ausgabe_spielbrett()
  
 def check_gewinner(sp):
 	brett = spielbrett
@@ -60,16 +62,14 @@ wi = 0
 for i in range(4):
 	stein_setzen(sp1)
 	if check_gewinner(sp1) == True:
-		ausgabe_spielbrett()
 		print("Spieler " + sp1 + " hat gewonnen")
 		wi = 1
 		break
 	stein_setzen(sp2)
 	if check_gewinner(sp2) == True:
-		ausgabe_spielbrett()
 		print("Spieler " + sp2 + " hat gewonnen")
 		wi = 1
 		break
-	ausgabe_spielbrett()
+	#ausgabe_spielbrett()
 if wi == 0:
 	print("Unentschieden")
